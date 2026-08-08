@@ -38,7 +38,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
             alt={`${project.name} screenshot`}
             fill
             sizes="(max-width: 768px) 100vw, 800px"
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <span className="absolute bottom-3 right-3 w-8 h-8 rounded-md bg-bg/80 backdrop-blur flex items-center justify-center">
             <Maximize2 className="w-3.5 h-3.5" strokeWidth={1.75} />
@@ -46,7 +46,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         </button>
 
         {project.images.length > 1 && (
-          <div className="flex gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-2 overflow-hidden">
             {project.images.map((img, i) => (
               <button
                 key={img}
