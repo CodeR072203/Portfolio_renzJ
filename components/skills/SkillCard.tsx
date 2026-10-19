@@ -14,7 +14,7 @@ export function SkillCard({ skill }: SkillCardProps) {
         <Icon className="w-3.5 h-3.5" />
         {skill.name}
       </span>
-      {(skill.level || skill.years) && (
+      {skill.level && (
         <span className="flex items-center gap-2 mt-1.5 text-text-dim">
           {skill.level && (
             <span className="flex gap-0.5" aria-label={`Skill level ${skill.level} out of 5`}>
@@ -27,7 +27,6 @@ export function SkillCard({ skill }: SkillCardProps) {
               ))}
             </span>
           )}
-          {skill.years && <span>{skill.years}y</span>}
         </span>
       )}
     </Badge>
